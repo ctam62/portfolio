@@ -1,6 +1,10 @@
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
 
+:root {
+    --site-padding: 1rem;
+    --letter-width: 25rem;
+}
 
 /* Colours */
 $night: #141414ff;
