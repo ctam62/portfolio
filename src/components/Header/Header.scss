@@ -1,0 +1,8 @@
+@use '../../styles/mixins.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+
+.header {
+    width: 100%;
+    background: $white;
+}
