@@ -1,10 +1,7 @@
 import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header/Header';
-import { Hero } from './components/Hero/Hero';
-import { About } from './components/About/About';
-import { Skills } from './components/Skills/Skills';
-import { Projects } from './components/Projects/Projects';
+import { HomePage } from './pages/HomePage/HomePage';
 import { Footer } from './components/Footer/Footer';
 
 
@@ -13,10 +10,7 @@ function App() {
         <BrowserRouter>
             <Header />
             <Routes>
-                <Route path="#hero" element={ <Hero /> } />
-                <Route path="#about" element={ <About /> } />
-                <Route path="#skills" element={ <Skills /> } />
-                <Route path="#projects" element={ <Projects /> } />
+                <Route path="/" element={ <HomePage /> } />
             </Routes>
             <Footer />
         </BrowserRouter>
