@@ -1,3 +1,5 @@
+@use 'fonts.scss';
+
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
 
@@ -5,6 +7,10 @@ $desktop-breakpoint: 1280px;
     --site-padding: 1rem;
     --letter-width: 25rem;
 }
+
+/* Fonts */
+$body-font-family: 'NunitoSans', Arial, Helvetica, sans-serif;
+$logo-font-family: 'CinzelDecorative', Georgia, Times, serif;
 
 /* Colours */
 $night: #141414ff;
