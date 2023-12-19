@@ -4,21 +4,22 @@ $desktop-breakpoint: 1280px;
 :root {
     --site-padding: 1rem;
     --letter-width: 25rem;
+    --nav-text: 0.875rem;
 }
 
-/* Colours */
-$night: #141414ff;
-$white: #FFFFFFff;
-$ash-gray: #ABBEBDff;
-$platinum: #E9E9E9ff;
-$robin-egg-blue: #10C9C2ff;
-$night-2: #141414ff;
-$antiflash-white: #EEEFEEff;
-$jet: #373737ff;
-$platinum-2: #E9E9E9ff;
-$seasalt: #F8F9F9ff;
+$site-padding: var(--site-padding);
 
-/* SCSS RGB */
+/* Colours */
+$night: #141414;
+$white: #FFFFFF;
+$ash-gray: #ABBEBD;
+$platinum: #E9E9E9;
+$robin-egg-blue: #10C9C2;
+$antiflash-white: #EEEFEE;
+$jet: #373737;
+$seasalt: #F8F9F9;
+
+/* SCSS RGBA */
 $night: rgba(20, 20, 20, 1);
 $white: rgba(255, 255, 255, 1);
 $ash-gray: rgba(171, 190, 189, 1);
@@ -29,14 +30,3 @@ $antiflash-white: rgba(238, 239, 238, 1);
 $jet: rgba(55, 55, 55, 1);
 $platinum-2: rgba(233, 233, 233, 1);
 $seasalt: rgba(248, 249, 249, 1);
-
-/* SCSS Gradient */
-$gradient-top: linear-gradient(0deg, #141414ff, #FFFFFFff, #ABBEBDff, #E9E9E9ff, #10C9C2ff, #141414ff, #EEEFEEff, #373737ff, #E9E9E9ff, #F8F9F9ff);
-$gradient-right: linear-gradient(90deg, #141414ff, #FFFFFFff, #ABBEBDff, #E9E9E9ff, #10C9C2ff, #141414ff, #EEEFEEff, #373737ff, #E9E9E9ff, #F8F9F9ff);
-$gradient-bottom: linear-gradient(180deg, #141414ff, #FFFFFFff, #ABBEBDff, #E9E9E9ff, #10C9C2ff, #141414ff, #EEEFEEff, #373737ff, #E9E9E9ff, #F8F9F9ff);
-$gradient-left: linear-gradient(270deg, #141414ff, #FFFFFFff, #ABBEBDff, #E9E9E9ff, #10C9C2ff, #141414ff, #EEEFEEff, #373737ff, #E9E9E9ff, #F8F9F9ff);
-$gradient-top-right: linear-gradient(45deg, #141414ff, #FFFFFFff, #ABBEBDff, #E9E9E9ff, #10C9C2ff, #141414ff, #EEEFEEff, #373737ff, #E9E9E9ff, #F8F9F9ff);
-$gradient-bottom-right: linear-gradient(135deg, #141414ff, #FFFFFFff, #ABBEBDff, #E9E9E9ff, #10C9C2ff, #141414ff, #EEEFEEff, #373737ff, #E9E9E9ff, #F8F9F9ff);
-$gradient-top-left: linear-gradient(225deg, #141414ff, #FFFFFFff, #ABBEBDff, #E9E9E9ff, #10C9C2ff, #141414ff, #EEEFEEff, #373737ff, #E9E9E9ff, #F8F9F9ff);
-$gradient-bottom-left: linear-gradient(315deg, #141414ff, #FFFFFFff, #ABBEBDff, #E9E9E9ff, #10C9C2ff, #141414ff, #EEEFEEff, #373737ff, #E9E9E9ff, #F8F9F9ff);
-$gradient-radial: radial-gradient(#141414ff, #FFFFFFff, #ABBEBDff, #E9E9E9ff, #10C9C2ff, #141414ff, #EEEFEEff, #373737ff, #E9E9E9ff, #F8F9F9ff);
