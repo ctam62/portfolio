@@ -1,3 +1,5 @@
+@use 'fonts.scss';
+
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
 
@@ -5,6 +7,9 @@ $desktop-breakpoint: 1280px;
     --site-padding: 1rem;
     --letter-width: 25rem;
 }
+
+/* Fonts */
+$font-family: 'NunitoSans', Arial, sans-serif;
 
 /* Colours */
 $night: #141414ff;
