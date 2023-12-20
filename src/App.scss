@@ -1,11 +1,15 @@
 @use './styles/variables.scss' as *;
 
+@use './styles/global.scss';
+
 #root {
   width: 100%;
   margin: 0 auto;
   padding: $site-padding;
   text-align: center;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
 }
 
