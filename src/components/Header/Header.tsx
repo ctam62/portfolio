@@ -1,11 +1,18 @@
 import './Header.scss';
-import { Link } from 'react-router-dom';
 import logo from '../../assets/logos/logo.svg';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 
 export const Header = () => {
+    const [open, setOpen] = useState(false);
+
+    const toggleOpen = () => {
+        setOpen(!open);
+    }
+
     return (
-        <header className="header"> 
+        <header className="header">
             <nav className="header__nav">
                 <Link to="/">
                     <img className="header__logo"
@@ -13,10 +20,10 @@ export const Header = () => {
                         alt="clara tam's portfolio site logo"
                     />
                 </Link>
-                <nav className="open">
+                <nav className={`toggle ${open ? "open" : ""}`} onClick={toggleOpen}>
                     <span className="cls"></span>
-                    <span>
-                        <ul className="header__nav-list submenu">
+                    <span className="menu__container">
+                        <ul className="header__nav-list menu">
                             <li className="header__nav-list-item">
                                 <Link to="/">HOME</Link>
                             </li>
@@ -33,7 +40,7 @@ export const Header = () => {
                     </span>
                     <span className="cls"></span>
                 </nav>
-            </nav>    
+            </nav>
         </header>
     )
 };
