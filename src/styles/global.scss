@@ -1,8 +1,18 @@
-@use '../styles/reset.scss';
-@use '../styles/mixins.scss';
-@use '../styles/variables.scss';
+@use './reset.scss';
+@use './mixins.scss'as *;
+@use './variables.scss' as *;
 
 
 html {
     font-size: 100%;
+}
+
+body {
+    font-family: $body-font-family;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
 }

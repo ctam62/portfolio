@@ -5,8 +5,14 @@ $desktop-breakpoint: 1280px;
 
 :root {
     --site-padding: 1rem;
-    --letter-width: 25rem;
+    --letter-width: 0.125rem;
     --nav-text: 0.875rem;
+
+    @media (min-width: $tablet-breakpoint) {
+        --site-padding: 1.5rem;
+    }
+
+    
 }
 
 /* Fonts */
