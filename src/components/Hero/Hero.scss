@@ -1,0 +1,9 @@
+@use '../../styles/mixins.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+
+.hero {
+    width: 100vw;
+    height: 70vh;
+    background: $platinum;
+}
