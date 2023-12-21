@@ -3,6 +3,173 @@
 
 
 .header {
-    width: 100%;
+    width: 95%;
     background: $white;
+    padding-bottom: 1rem;
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            justify-content: center;
+
+            &-item {
+                @include nav-text;
+                @include letter;
+                color: $night;
+                height: auto;
+                transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+                &:first-child {
+                    margin-top: 7.5rem;
+                }
+
+                &:nth-child(1) {
+                    -webkit-transition-delay: 0.05s;
+                }
+
+                &:nth-child(2) {
+                    -webkit-transition-delay: 0.10s;
+                }
+
+                &:nth-child(3) {
+                    -webkit-transition-delay: 0.15s;
+                }
+
+                &:nth-child(4) {
+                    -webkit-transition-delay: 0.20s;
+                }
+
+                &:nth-child(5) {
+                    -webkit-transition-delay: 0.25s;
+                }
+
+                &:hover {
+                    color: $robin-egg-blue;
+                }
+
+                a {
+                    width: 100%;
+                    color: $white;
+                    line-height: 2rem;
+
+                    &:hover {
+                        font-weight: 900;
+                    }
+                }
+            }
+        }
+    }
+
+    &__logo {
+        width: 3.75rem;
+    }
+}
+
+.toggle {
+    position: fixed;
+    top: 1.875rem;
+    right: 2.5rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    display: block;
+    cursor: pointer;
+    border-radius: 6.25rem;
+    box-shadow: 0.1255rem -0.75rem 0 rgba($ash-gray, 0), inset 1rem 2rem 2rem 1rem rgba($ash-gray, 0);
+    transition: all 0.5s ease-in-out;
+
+    &:hover,
+    &:focus {
+        opacity: 0.85;
+        box-shadow: 0.1255rem -0.75rem 0 0.75rem rgba($ash-gray, 0.1), inset 1rem 2rem 2rem 1rem rgba($ash-gray, 0.1), 0.1255rem -0.75rem 0 0.75rem rgba($ash-gray, 0.1),
+            inset 1rem 2rem 2rem 1rem rgba($ash-gray, 0.1);
+        ;
+    }
+
+    span {
+        display: flex;
+        flex-direction: column;
+        height: 0.1875rem;
+        width: 1.875rem;
+        border-radius: 3.125rem;
+        background-color: $robin-egg-blue;
+        position: absolute;
+        right: 0.5rem;
+        top: 0;
+        overflow: hidden;
+        transition: all 0.4s ease;
+
+        &:nth-child(1) {
+            z-index: 9;
+        }
+
+        &:nth-child(2) {
+            margin-top: 0.625rem;
+        }
+
+        &:nth-child(3) {
+            margin-top: 1.25rem;
+        }
+    }
+}
+
+.menu {
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    height: 0;
+    width: 0;
+    right: 0;
+    top: 1rem;
+    position: absolute;
+    background-color: rgba($robin-egg-blue, 0.54);
+    border-radius: 50%;
+    z-index: 18;
+    overflow: hidden;
+}
+
+.open {
+    .menu {
+        opacity: 1;
+        height: 25rem;
+        width: 25rem;
+    }
+
+    span {
+        background-color: $white;
+    }
+
+    span:nth-child(2) {
+        overflow: visible;
+    }
+
+    span:nth-child(1),
+    span:nth-child(3) {
+        z-index: 100;
+        transform: rotate(45deg);
+    }
+
+    span:nth-child(1) {
+        transform: rotate(45deg) translateY(0.625rem) translateX(0.625rem);
+    }
+
+    span:nth-child(2) {
+        height: 25rem;
+        width: 25rem;
+        right: -10rem;
+        top: -10rem;
+        border-radius: 50%;
+        background-color: rgba($robin-egg-blue, 0.54);
+    }
+
+    span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-0.3125rem) translateX(0.3125rem);
+    }
+
+    li {
+        margin-right: 10.5rem;
+    }
 }

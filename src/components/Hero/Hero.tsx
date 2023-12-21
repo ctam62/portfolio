@@ -3,6 +3,8 @@ import './Hero.scss';
 
 export const Hero = () => {
     return (
-        <section>Hero</section>
+        <section className="hero" id="hero">
+            
+        </section>
     )
 };

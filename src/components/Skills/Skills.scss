@@ -1,0 +1,14 @@
+@use '../../styles/mixins.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+
+.skills {
+    width: 100vw;
+    height: 70vh;
+    background: $seasalt;
+    padding: 1rem;
+
+    @include tablet {
+        padding: 3rem;
+    }
+}

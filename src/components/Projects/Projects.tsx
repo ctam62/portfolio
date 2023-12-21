@@ -3,6 +3,8 @@ import './Projects.scss';
 
 export const Projects = () => {
     return (
-        <section>Projects</section>
+        <section className="projects" id="projects">
+            
+        </section>
     )
 };

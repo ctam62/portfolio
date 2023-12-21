@@ -3,6 +3,8 @@ import './About.scss';
 
 export const About = () => {
     return (
-        <section>About</section>
+        <section className="about" id="about">
+            <h2>About Me</h2>
+        </section>
     )
 };

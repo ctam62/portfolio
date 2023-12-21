@@ -1,4 +1,5 @@
-@use '../styles/variables.scss' as *;
+@use './variables.scss' as *;
+
 
 @mixin tablet {
     @media (min-width: $tablet-breakpoint) {
@@ -10,4 +11,13 @@
     @media (min-width: $desktop-breakpoint) {
         @content;
     }
+}
+
+@mixin letter {
+    letter-spacing: var(--letter-width);
+}
+
+@mixin nav-text {
+    font-size: var(--nav-text);
+    line-height: 1rem;
 }
