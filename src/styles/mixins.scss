@@ -21,3 +21,15 @@
     font-size: var(--nav-text);
     line-height: 1rem;
 }
+
+@mixin button {
+    color: $white;
+    background: $robin-egg-blue;
+    padding: 1rem 2rem;
+}
+
+@mixin circle {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 3.125rem;
+}

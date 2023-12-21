@@ -4,6 +4,85 @@
 
 .hero {
     width: 100vw;
-    height: 70vh;
-    background: $platinum;
+    padding: 1rem 1rem 0 1rem;
+    background: $blue-gray;
+
+    @include tablet {
+        padding: 2rem 2rem 0 2rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &-col {
+            width: 100%;
+            padding: 1rem 1rem 0 1rem;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: flex-start;
+
+            @include tablet {
+                height: auto;
+                padding: 1rem 1rem 0 1rem;
+                width: 45%;
+            }
+
+            &--img {
+                margin-top: 1.5rem;
+                min-height: 23.75rem;
+                opacity: 0.5;
+                background: center/cover no-repeat url('../../assets/images/portrait.png');
+
+                @include tablet {
+                    margin-top: 0;
+                }
+            }
+
+            &--mid {
+                width: 5%;
+                align-items: center;
+            }
+        }
+    }
+
+    &__heading {
+        font-family: $logo-font-family;
+        font-size: 2rem;
+        margin: 4rem 1.5rem 1.5rem 1.5rem;
+    }
+
+    &__text {
+        color: rgba($jet, 0.6);
+        padding: 0 1.5rem;
+    }
+
+    &__button {
+        @include button;
+        margin: 1.5rem;
+    }
+}
+
+
+.circle {
+    margin-top: 4.5rem;
+    @include circle;
+    background: $white;
+
+    &--bottom {
+        background: $robin-egg-blue;
+    }
+}
+
+.line {
+    width: 0.125rem;
+    height: 5vh;
+    background: $white;
+
+    @include tablet {
+        height: 34vh;
+    }
 }
