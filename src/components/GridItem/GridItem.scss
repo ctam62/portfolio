@@ -1,0 +1,23 @@
+@use '../../styles/mixins.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+
+.grid-item {
+    background: $primary-dark-bg;
+    border: 0.0625rem solid rgba(0, 0, 0, 0.1);
+    padding: 1.25rem;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $jet;
+        background-image: url('../../assets/icons/view.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 20%;
+        opacity: 0.7;
+    }
+}
