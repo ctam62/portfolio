@@ -7,9 +7,12 @@ $desktop-breakpoint: 1280px;
     --site-padding: 1rem;
     --letter-width: 0.125rem;
     --nav-text: 0.875rem;
+    --body-text: 1rem;
 
     @media (min-width: $tablet-breakpoint) {
         --site-padding: 1.5rem;
+        --nav-text: 0.9375rem;
+        --body-text: 1.125rem;
     }
 
 
@@ -31,3 +34,15 @@ $robin-egg-blue: #10C9C2;
 $antiflash-white: #EEEFEE;
 $jet: #373737;
 $seasalt: #F8F9F9;
+
+$primary: $robin-egg-blue;
+$primary-text: $night;
+$primary-light-bg: $white;
+$primary-dark-bg: $platinum;
+
+$secondary: $seasalt;
+$secondary-text: $white;
+
+$tertiary: $ash-gray;
+$tertiary-text: $jet;
+$hero-bg: $blue-gray;

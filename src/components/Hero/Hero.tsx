@@ -7,9 +7,8 @@ export const Hero = () => {
             <div className="hero__content">
                 <article className="hero__content-col hero__content-col--img"></article>
                 <article className="hero__content-col hero__content-col--mid">
-                    <span className="circle"></span>
-                    <span className="line"></span>
-                    <span className="circle--bottom"></span>
+                    <span className="hero__circle"></span>
+                    <span className="hero__line"></span>
                 </article>
                 <article className="hero__content-col">
                     <h1 className="hero__heading">Clara Tam</h1>

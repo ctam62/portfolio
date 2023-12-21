@@ -4,7 +4,7 @@
 
 .header {
     width: 95%;
-    background: $white;
+    background: $primary-light-bg;
     padding-bottom: 1rem;
 
     &__nav {
@@ -31,22 +31,27 @@
 
                 &:nth-child(1) {
                     -webkit-transition-delay: 0.05s;
+                    transition-delay: 0.05s;
                 }
 
                 &:nth-child(2) {
                     -webkit-transition-delay: 0.10s;
+                    transition-delay: 0.05s;
                 }
 
                 &:nth-child(3) {
                     -webkit-transition-delay: 0.15s;
+                    transition-delay: 0.05s;
                 }
 
                 &:nth-child(4) {
                     -webkit-transition-delay: 0.20s;
+                    transition-delay: 0.05s;
                 }
 
                 &:nth-child(5) {
                     -webkit-transition-delay: 0.25s;
+                    transition-delay: 0.05s;
                 }
 
                 &:hover {
@@ -80,14 +85,14 @@
     display: block;
     cursor: pointer;
     border-radius: 6.25rem;
-    box-shadow: 0.1255rem -0.75rem 0 rgba($ash-gray, 0), inset 1rem 2rem 2rem 1rem rgba($ash-gray, 0);
+    box-shadow: 0.1255rem -0.75rem 0 rgba($tertiary, 0), inset 1rem 2rem 2rem 1rem rgba($tertiary, 0);
     transition: all 0.5s ease-in-out;
 
     &:hover,
     &:focus {
         opacity: 0.85;
-        box-shadow: 0.1255rem -0.75rem 0 0.75rem rgba($ash-gray, 0.1), inset 1rem 2rem 2rem 1rem rgba($ash-gray, 0.1), 0.1255rem -0.75rem 0 0.75rem rgba($ash-gray, 0.1),
-            inset 1rem 2rem 2rem 1rem rgba($ash-gray, 0.1);
+        box-shadow: 0.1255rem -0.75rem 0 0.75rem rgba($tertiary, 0.1), inset 1rem 2rem 2rem 1rem rgba($tertiary, 0.1), 0.1255rem -0.75rem 0 0.75rem rgba($tertiary, 0.1),
+            inset 1rem 2rem 2rem 1rem rgba($tertiary, 0.1);
         ;
     }
 
@@ -97,7 +102,7 @@
         height: 0.1875rem;
         width: 1.875rem;
         border-radius: 3.125rem;
-        background-color: $robin-egg-blue;
+        background-color: $primary;
         position: absolute;
         right: 0.5rem;
         top: 0;
@@ -125,7 +130,7 @@
     right: 0;
     top: 1rem;
     position: absolute;
-    background-color: rgba($robin-egg-blue, 0.54);
+    background-color: rgba($primary, 0.54);
     border-radius: 50%;
     z-index: 18;
     overflow: hidden;
@@ -139,7 +144,7 @@
     }
 
     span {
-        background-color: $white;
+        background-color: $primary-light-bg;
     }
 
     span:nth-child(2) {
@@ -162,7 +167,7 @@
         right: -10rem;
         top: -10rem;
         border-radius: 50%;
-        background-color: rgba($robin-egg-blue, 0.54);
+        background-color: rgba($primary, 0.54);
     }
 
     span:nth-child(3) {
