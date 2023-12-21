@@ -11,8 +11,8 @@ export const Footer = () => {
                 alt="clara tam's portfolio site logo"
             />
             <div className="footer__text">
-                <p className="footer__copy">&copy; All rights reserved.</p>
-                <p className="footer__copy">Designed and built by Clara Tam.</p>
+                <p className="footer__copy">&copy; All rights reserved</p>
+                <p className="footer__copy">Designed and built by Clara Tam</p>
             </div>
         </footer>
     )
