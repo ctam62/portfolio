@@ -5,7 +5,7 @@
 .hero {
     width: 100vw;
     padding: 1rem 1rem 0 1rem;
-    background: $blue-gray;
+    background: $hero-bg;
 
     @include tablet {
         padding: 2rem 2rem 0 2rem;
@@ -14,6 +14,7 @@
     &__content {
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
         justify-content: center;
 
         &-col {
@@ -40,11 +41,18 @@
                 @include tablet {
                     margin-top: 0;
                 }
+
+                @include desktop {
+                    height: 37.5rem;
+                }
             }
 
             &--mid {
                 width: 5%;
+                display: flex;
+                flex-direction: column;
                 align-items: center;
+                justify-content: flex-end;
             }
         }
     }
@@ -52,37 +60,41 @@
     &__heading {
         font-family: $logo-font-family;
         font-size: 2rem;
-        margin: 4rem 1.5rem 1.5rem 1.5rem;
+        margin: 1.5rem;
     }
 
     &__text {
-        color: rgba($jet, 0.6);
+        color: rgba($tertiary-text, 0.6);
         padding: 0 1.5rem;
+        @include body-text;
     }
 
     &__button {
         @include button;
         margin: 1.5rem;
     }
-}
 
+    &__circle {
+        margin-top: 16.5vh;
+        @include circle;
+        background: $white;
 
-.circle {
-    margin-top: 4.5rem;
-    @include circle;
-    background: $white;
-
-    &--bottom {
-        background: $robin-egg-blue;
+        &--bottom {
+            background: $primary;
+        }
     }
-}
 
-.line {
-    width: 0.125rem;
-    height: 5vh;
-    background: $white;
+    &__line {
+        @include line;
+        height: 4.5vh;
+        background: $white;
 
-    @include tablet {
-        height: 34vh;
+        @include tablet {
+            height: 25rem;
+        }
+
+        @include desktop {
+            height: 27.25rem;
+        }
     }
 }
