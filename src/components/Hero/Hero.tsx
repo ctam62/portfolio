@@ -16,7 +16,7 @@ export const Hero = () => {
                     <h1 className="hero__heading">Clara Tam</h1>
                     <p className="hero__text">
                         A software engineer passionate in creating meaningful
-                        zuser-friendly applications balancing aesthetics and functionality.
+                        user-friendly applications balancing aesthetics and functionality.
                     </p>
                     <button className="hero__button">VIEW PROJECTS</button>
                 </article>
