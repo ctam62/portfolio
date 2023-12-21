@@ -30,7 +30,6 @@
 
     &__line--primary {
         @include line;
-        height: 7vh;
         background: $primary;
     }
 
