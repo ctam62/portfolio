@@ -1,0 +1,11 @@
+@use '../../styles/mixins.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+
+.project {
+    padding: $site-padding;
+
+    &__content {
+        display: flex;
+    }
+}

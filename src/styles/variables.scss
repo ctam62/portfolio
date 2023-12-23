@@ -8,11 +8,14 @@ $desktop-breakpoint: 1280px;
     --letter-width: 0.125rem;
     --nav-text: 0.875rem;
     --body-text: 1rem;
+    --section-heading: 1.75rem;
+    --subheading: 1.25rem;
 
     @media (min-width: $tablet-breakpoint) {
         --site-padding: 1.5rem;
         --nav-text: 0.9375rem;
         --body-text: 1.125rem;
+        --subheading: 1.5rem;
     }
 
 

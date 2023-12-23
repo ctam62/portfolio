@@ -34,12 +34,16 @@
     }
 
     &__heading {
-        font-size: 1.75rem;
+        @include section-header;
         margin: 4rem 1.5rem 1.5rem 1.5rem;
     }
 
     &__text {
         padding: 1rem;
+    }
+
+    &__text-block {
+        margin-bottom: 3.5rem;
     }
 
     &__signature {

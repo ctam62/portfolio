@@ -28,16 +28,16 @@ export const Header = () => {
                                 <Link to="/">HOME</Link>
                             </li>
                             <li className="header__nav-list-item">
-                                <Link to="/#about">ABOUT</Link>
+                                <Link to="#about">ABOUT</Link>
                             </li>
                             <li className="header__nav-list-item">
-                                <Link to="/#projects">PROJECTS</Link>
+                                <Link to="#projects">PROJECTS</Link>
                             </li>
                             <li className="header__nav-list-item">
-                                <Link to="/resume">CONTACT</Link>
+                                <Link to="#contact">CONTACT</Link>
                             </li>
                             <li className="header__nav-list-item">
-                                <Link to="/resume">RESUME</Link>
+                                <Link to="">RESUME</Link>
                             </li>
                         </ul>
                     </span>

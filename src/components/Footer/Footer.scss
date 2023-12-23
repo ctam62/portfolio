@@ -21,5 +21,9 @@
     &__copy {
         font-size: 0.8125rem;
         line-height: 1.25rem;
+
+        @include tablet {
+            font-size: 0.875rem;
+        }
     }
 }
