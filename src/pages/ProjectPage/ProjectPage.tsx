@@ -5,7 +5,12 @@ import data from '../../data/projects.json';
 import { useEffect, useState } from 'react';
 
 
-export const ProjectPage = () => {
+interface props {
+    open: boolean;
+    setOpen: Function;
+}
+
+export const ProjectPage = ({ open, setOpen }: props) => {
     const { title } = useParams();
     const project = data.filter(item => item.title.toLowerCase() === title?.replace(/[-]/g, " "))[0];
     const responsiveImg = project.images.includes(`${title?.toLowerCase()}-responsive.jpg`);
@@ -45,8 +50,14 @@ export const ProjectPage = () => {
         navigate(`/project/${nextProjectTitle}`);
     };
 
+    const handleNavClose = () => {
+        if (open === true) {
+            setOpen(false);
+        }
+    };
+
     return (
-        <main className="project">
+        <main className="project" onClick={handleNavClose}>
             <section className="project__content">
                 <div className="project__content-col project__content-col--first">
                     <div
