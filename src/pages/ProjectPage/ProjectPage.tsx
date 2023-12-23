@@ -22,7 +22,7 @@ export const ProjectPage = () => {
                 <div className="project__content-col project__content-col--first">
                     <div
                         className="project__imgs"
-                        style={{ background: `center/cover no-repeat url(../src/assets/images/${filename})` }}
+                        style={{ background: `center/cover no-repeat url(../../assets/images/${filename})` }}
                     >
                     </div>
                 </div>
