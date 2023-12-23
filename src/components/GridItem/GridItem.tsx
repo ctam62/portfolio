@@ -11,7 +11,7 @@ interface props {
 
 export const GridItem = ({ title, img }: props) => {
 
-    const [visible, setVisible] = useState(true);
+    const [visible, setVisible] = useState(false);
     const navigate = useNavigate();
 
     return (

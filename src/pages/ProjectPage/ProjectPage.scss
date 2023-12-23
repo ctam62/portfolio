@@ -3,9 +3,104 @@
 
 
 .project {
-    padding: $site-padding;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     &__content {
+        width: 100%;
+        height: fit-content;
         display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        background: $secondary;
+
+        &-col {
+            width: 100%;
+            height: 42rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            @include desktop {
+                width: 47%;
+
+                &:nth-child(1) {
+                    order: 2;
+                }
+
+                &:nth-child(2) {
+                    order: 1;
+                }
+            }
+        }
+    }
+
+    &__description {
+        width: 95%;
+        margin: 0 auto;
+        padding: 1.25rem;
+        text-align: left;
+
+        @include desktop {
+            padding: 2.5rem;
+        }
+    }
+
+    &__title {
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+        @include section-header;
+        font-weight: 700;
+    }
+
+    &__summary {
+        color: $tertiary-text;
+    }
+
+    &__details {
+        margin: 1.5rem 0;
+        line-height: 1.875rem;
+    }
+
+    &__subheading {
+        font-weight: 700;
+    }
+
+    &__text>a {
+        color: $primary;
+    }
+
+    &__imgs {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__nav {
+        @include nav-text;
+        width: 100%;
+        background: $primary-light-bg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-list {
+            width: 95%;
+            padding: 2.5rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &-item {
+                font-weight: 700;
+                cursor: pointer;
+            }
+        }
     }
 }
