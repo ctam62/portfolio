@@ -4,12 +4,16 @@ import { Link } from 'react-router-dom';
 import resume from '/Clara_Tam_Resume_Software_Engineer.pdf';
 
 
-export const Header = () => {
-    const [open, setOpen] = useState(false);
+interface props {
+    open: boolean;
+    setOpen: Function;
+}
+
+export const Header = ({ open, setOpen }: props) => {
 
     const toggleOpen = () => {
         setOpen(!open);
-    }
+    };
 
     return (
         <header className="header">
