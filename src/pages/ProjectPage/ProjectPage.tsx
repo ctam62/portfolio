@@ -1,13 +1,10 @@
 import './ProjectPage.scss';
-import { useState } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import data from '../../data/projects.json';
 
 
 export const ProjectPage = () => {
-
-    const [visible, setVisible] = useState(false);
-
     const { title } = useParams();
     const project = data.filter(item => item.title.toLowerCase() === title)[0];
     const filename = title?.toLowerCase().replace(/\s/g, "");
@@ -35,7 +32,7 @@ export const ProjectPage = () => {
 
                             <p className={`project__text ${project.url === "" ? "hide" : ""}`}>
                                 <span className="project__subheading">Website: </span>
-                                {project.url}
+                                <Link to={project.url}>{project.url.replace(/(https:\/\/)|(http:\/\/)/g, "")}</Link>
                             </p>
 
                             <p className={`project__text ${project.date === "" ? "hide" : ""}`}>
