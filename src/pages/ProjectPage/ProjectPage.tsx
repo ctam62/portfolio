@@ -1,12 +1,13 @@
 import './ProjectPage.scss';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import data from '../../data/projects.json';
+import { useEffect, useState } from 'react';
 
 
 export const ProjectPage = () => {
     const { title } = useParams();
-    const project = data.filter(item => item.title.toLowerCase() === title)[0];
+    const project = data.filter(item => item.title.toLowerCase() === title?.replace(/[-]/g, " "))[0];
     const responsiveImg = project.images.includes(`${title?.toLowerCase()}-responsive.jpg`);
     let filename = project.images[0];
 
@@ -15,6 +16,34 @@ export const ProjectPage = () => {
         filename = project.images[targetIndex];
     }
 
+    const [disablePrev, setDisablePrev] = useState(false);
+    const [disableNext, setDisableNext] = useState(false);
+
+    const navigate = useNavigate();
+    const currentIndex = data.indexOf(project);
+    const prevIndex = currentIndex - 1;
+    const nextIndex = currentIndex + 1;
+
+    useEffect(() => {
+        if (data.length - 1 < nextIndex) {
+            setDisableNext(true);
+        } else if (prevIndex < 0) {
+            setDisablePrev(true);
+        } else {
+            setDisablePrev(false);
+            setDisableNext(false);
+        }
+    }, [prevIndex, nextIndex]);
+
+    const handlePrevProject = () => {
+        const prevProjectTitle = data[prevIndex].title.toLowerCase();
+        navigate(`/project/${prevProjectTitle}`);
+    };
+
+    const handleNextProject = () => {
+        const nextProjectTitle = data[nextIndex].title.toLowerCase();
+        navigate(`/project/${nextProjectTitle}`);
+    };
 
     return (
         <main className="project">
@@ -22,7 +51,7 @@ export const ProjectPage = () => {
                 <div className="project__content-col project__content-col--first">
                     <div
                         className="project__imgs"
-                        style={{ background: `center/cover no-repeat url(../../assets/images/${filename})` }}
+                        style={{ background: `center/cover no-repeat url(/src/assets/images/${filename})` }}
                     >
                     </div>
                 </div>
@@ -39,7 +68,7 @@ export const ProjectPage = () => {
 
                             <p className={`project__text ${project.url === "" ? "hide" : ""}`}>
                                 <span className="project__subheading">Website: </span>
-                                <Link to={project.url}>{project.url.replace(/(https:\/\/)|(http:\/\/)/g, "")}</Link>
+                                <Link to={project.url} target="_blank">{project.url.replace(/(https:\/\/)|(http:\/\/)/g, "")}</Link>
                             </p>
 
                             <p className={`project__text ${project.date === "" ? "hide" : ""}`}>
@@ -72,8 +101,16 @@ export const ProjectPage = () => {
             </section>
             <nav className="project__nav">
                 <ul className="project__nav-list">
-                    <li className="project__nav-list-item">PREVIOUS PROJECT</li>
-                    <li className="project__nav-list-item">NEXT PROJECT</li>
+                    <li
+                        className={`project__nav-list-item ${disablePrev ? "hidden" : ""}`}
+                        onClick={handlePrevProject}>
+                        PREVIOUS PROJECT
+                    </li>
+                    <li
+                        className={`project__nav-list-item ${disableNext ? "hidden" : ""}`}
+                        onClick={handleNextProject}>
+                        NEXT PROJECT
+                    </li>
                 </ul>
             </nav>
         </main>
