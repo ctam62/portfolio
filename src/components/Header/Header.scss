@@ -1,0 +1,187 @@
+@use '../../styles/mixins.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+
+.header {
+    width: 95%;
+    background: $primary-light-bg;
+    padding: 1.25rem $site-padding;
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            justify-content: center;
+
+            &-item {
+                @include nav-text;
+                @include letter;
+                color: $night;
+                height: auto;
+                transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+                &:first-child {
+                    margin-top: 8rem;
+                }
+
+                &:nth-child(1) {
+                    -webkit-transition-delay: 0.05s;
+                    transition-delay: 0.05s;
+                }
+
+                &:nth-child(2) {
+                    -webkit-transition-delay: 0.10s;
+                    transition-delay: 0.05s;
+                }
+
+                &:nth-child(3) {
+                    -webkit-transition-delay: 0.15s;
+                    transition-delay: 0.05s;
+                }
+
+                &:nth-child(4) {
+                    -webkit-transition-delay: 0.20s;
+                    transition-delay: 0.05s;
+                }
+
+                &:nth-child(5) {
+                    -webkit-transition-delay: 0.25s;
+                    transition-delay: 0.05s;
+                }
+
+                &:hover {
+                    color: $robin-egg-blue;
+                }
+
+                a {
+                    width: 100%;
+                    color: $white;
+                    line-height: 2rem;
+
+                    &:hover {
+                        font-weight: 900;
+                    }
+                }
+            }
+        }
+    }
+
+    &__logo {
+        @include logo;
+    }
+}
+
+.toggle {
+    position: fixed;
+    padding: 0.25rem;
+    top: 1rem;
+    right: 2.5rem;
+    width: 3.4375rem;
+    height: 3.4375rem;
+    display: block;
+    cursor: pointer;
+    background-color: rgba($primary-light-bg, 0.8);
+    background-position-y: bottom 2rem;
+    border-radius: 6.25rem;
+    box-shadow: 0 0 0 rgba($tertiary, 0), inset 0 0 0 2rem rgba($tertiary, 0);
+    transition: all 0.5s ease-in-out;
+    z-index: 6;
+
+    &:hover,
+    &:focus {
+        background: transparent;
+        opacity: 0.85;
+        box-shadow: 0 0 0 0.5rem rgba($tertiary, 0.1),
+            inset 0 0 0 2rem rgba($tertiary, 0.1),
+            0 0 0 0.5rem rgba($tertiary, 0.1),
+            inset 0 0 0 2rem rgba($tertiary, 0.1);
+        ;
+    }
+
+    span {
+        display: flex;
+        flex-direction: column;
+        height: 0.1875rem;
+        width: 1.875rem;
+        border-radius: 3.125rem;
+        background-color: $primary;
+        position: absolute;
+        right: 0.75rem;
+        top: 1rem;
+        overflow: hidden;
+        transition: all 0.4s ease;
+
+        &:nth-child(1) {
+            z-index: 9;
+        }
+
+        &:nth-child(2) {
+            margin-top: 0.625rem;
+        }
+
+        &:nth-child(3) {
+            margin-top: 1.25rem;
+        }
+    }
+}
+
+.menu {
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    height: 0;
+    width: 0;
+    right: 0;
+    top: 2rem;
+    position: absolute;
+    background-color: rgba($primary, 0.54);
+    border-radius: 50%;
+    z-index: 18;
+    overflow: hidden;
+}
+
+.open {
+    .menu {
+        opacity: 1;
+        height: 25rem;
+        width: 25rem;
+    }
+
+    span {
+        background-color: $primary-light-bg;
+    }
+
+    span:nth-child(2) {
+        overflow: visible;
+    }
+
+    span:nth-child(1),
+    span:nth-child(3) {
+        z-index: 100;
+        transform: rotate(45deg);
+    }
+
+    span:nth-child(1) {
+        transform: rotate(45deg) translateY(0.625rem) translateX(0.625rem);
+    }
+
+    span:nth-child(2) {
+        height: 25rem;
+        width: 25rem;
+        right: -10rem;
+        top: -10rem;
+        border-radius: 50%;
+        background-color: rgba($primary, 0.54);
+    }
+
+    span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-0.3125rem) translateX(0.3125rem);
+    }
+
+    li {
+        margin-right: 10.5rem;
+    }
+}

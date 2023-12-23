@@ -1,0 +1,23 @@
+@use '../../styles/mixins.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+
+.contact {
+    width: 100%;
+    background: $seasalt;
+    padding: 1rem;
+
+    @include tablet {
+        padding: 3rem;
+    }
+
+    &__heading {
+        @include section-header;
+        margin: 1.5rem;
+    }
+
+    &__button {
+        @include button;
+        margin-bottom: 1.5rem;
+    }
+}

@@ -1,0 +1,54 @@
+@use '../../styles/mixins.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+
+.about {
+    width: 100vw;
+    background: $primary-light-bg;
+    padding: 0 1rem;
+
+    @include tablet {
+        padding: 0 3rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include tablet {
+            margin: 0 auto;
+            width: 70%;
+        }
+    }
+
+    &__circle--primary {
+        @include circle;
+        background: $primary;
+    }
+
+    &__line--primary {
+        @include line;
+        background: $primary;
+    }
+
+    &__heading {
+        @include section-header;
+        margin: 4rem 1.5rem 1.5rem 1.5rem;
+    }
+
+    &__text {
+        padding: 1rem;
+    }
+
+    &__text-block {
+        margin-bottom: 3.5rem;
+    }
+
+    &__signature {
+        width: 10.9375rem;
+        margin: 1.5rem 0;
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,29 @@
+@use '../../styles/mixins.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+
+.footer {
+    width: 100%;
+    background: $primary-text;
+    padding: $site-padding;
+    color: $secondary-text;
+
+    &__logo {
+        @include logo;
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(357deg) brightness(101%) contrast(107%);
+        margin: 1.5rem 0;
+    }
+
+    &__text {
+        margin-bottom: 1.5rem;
+    }
+
+    &__copy {
+        font-size: 0.8125rem;
+        line-height: 1.25rem;
+
+        @include tablet {
+            font-size: 0.875rem;
+        }
+    }
+}

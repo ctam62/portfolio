@@ -1,0 +1,115 @@
+@use '../../styles/mixins.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+
+.hero {
+    width: 100vw;
+    padding: 1rem 1rem 0 1rem;
+    background: $hero-bg;
+
+    @include tablet {
+        padding: 2rem 2rem 0 2rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        &-col {
+            width: 100%;
+            padding: 1rem 1rem 0 1rem;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: flex-start;
+
+            @include tablet {
+                height: auto;
+                padding: 1rem 1rem 0 1rem;
+                width: 45%;
+
+                &:nth-child(2) {
+                    order: 3;
+                }
+
+                &:nth-child(3) {
+                    order: 2;
+                }
+            }
+
+            &--img {
+                margin-top: 1.5rem;
+                min-height: 23.75rem;
+                opacity: 0.5;
+                // background: center/cover no-repeat url('../../assets/images/portrait.png');
+
+                @include tablet {
+                    margin-top: 0;
+                }
+
+                @include desktop {
+                    height: 37.5rem;
+                }
+            }
+
+            &--mid {
+                width: 5%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+            }
+
+            &--right {
+                padding: 0 1rem 2rem 1rem;
+            }
+        }
+    }
+
+    &__heading {
+        font-family: $logo-font-family;
+        font-size: 2rem;
+        margin: 1.5rem;
+    }
+
+    &__text {
+        color: rgba($tertiary-text, 0.6);
+        padding: 0 1.5rem;
+        @include body-text;
+    }
+
+    &__button {
+        @include button;
+        margin: 1.5rem;
+    }
+
+    &__circle {
+
+        @include circle;
+        background: $white;
+
+        @include tablet {
+            margin-top: 16.5vh;
+        }
+
+        &--bottom {
+            background: $primary;
+        }
+    }
+
+    &__line {
+        @include line;
+        background: $white;
+
+        @include tablet {
+            height: 25rem;
+        }
+
+        @include desktop {
+            height: 27.25rem;
+        }
+    }
+}
