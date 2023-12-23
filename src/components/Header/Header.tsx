@@ -25,16 +25,16 @@ export const Header = () => {
                     <span className="menu__container">
                         <ul className="header__nav-list menu">
                             <li className="header__nav-list-item">
-                                <Link to="/">HOME</Link>
+                                <Link to="./">HOME</Link>
                             </li>
                             <li className="header__nav-list-item">
-                                <Link to="/#about">ABOUT</Link>
+                                <Link to="./#about">ABOUT</Link>
                             </li>
                             <li className="header__nav-list-item">
-                                <Link to="/#projects">PROJECTS</Link>
+                                <Link to="./#projects">PROJECTS</Link>
                             </li>
                             <li className="header__nav-list-item">
-                                <Link to="/#contact">CONTACT</Link>
+                                <Link to="./#contact">CONTACT</Link>
                             </li>
                             <li className="header__nav-list-item">
                                 <Link to="">RESUME</Link>
