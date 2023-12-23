@@ -3,9 +3,66 @@
 
 
 .project {
-    padding: $site-padding;
+    width: 100%;
+    background: $secondary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     &__content {
+        width: 95%;
+        padding: 2rem 1.25rem;
         display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    &__description {
+        width: 100%;
+        text-align: left;
+
+        @include tablet {
+            width: 45%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 2rem;
+        @include section-header;
+        font-weight: 700;
+    }
+
+    &__summary {
+        color: $tertiary-text;
+    }
+
+    &__details {
+        margin: 1.5rem 0;
+    }
+
+    &__subheading {
+        font-weight: 700;
+    }
+
+    &__nav {
+        @include nav-text;
+        width: 100%;
+        background: $primary-light-bg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-list {
+            width: 95%;
+            padding: 2rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &-item {
+                font-weight: 700;
+            }
+        }
     }
 }
