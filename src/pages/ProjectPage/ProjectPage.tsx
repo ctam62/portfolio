@@ -7,19 +7,26 @@ import data from '../../data/projects.json';
 export const ProjectPage = () => {
     const { title } = useParams();
     const project = data.filter(item => item.title.toLowerCase() === title)[0];
-    const filename = title?.toLowerCase().replace(/\s/g, "");
+    const responsiveImg = project.images.includes(`${title?.toLowerCase()}-responsive.jpg`);
+    let filename = project.images[0];
+
+    if (responsiveImg) {
+        const targetIndex = project.images.indexOf(`${title?.toLowerCase()}-responsive.jpg`);
+        filename = project.images[targetIndex];
+    }
+
 
     return (
         <main className="project">
             <section className="project__content">
-                <div className="project__content-col">
+                <div className="project__content-col project__content-col--first">
                     <div
                         className="project__imgs"
-                        style={{ background: `center/cover no-repeat url(/src/assets/images/${filename}.jpg)` }}
+                        style={{ background: `center/cover no-repeat url(../src/assets/images/${filename})` }}
                     >
                     </div>
                 </div>
-                <div className="project__content-col">
+                <div className="project__content-col project__content-col--second">
                     <article className="project__description">
                         <h2 className="project__title">{project.title}</h2>
                         <p className="project__summary">{project.description}</p>
