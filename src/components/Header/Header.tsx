@@ -1,7 +1,7 @@
 import './Header.scss';
 import logo from '../../assets/logos/logo.svg';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import resume from '/Clara_Tam_Resume_Software_Engineer.pdf';
 
 
 export const Header = () => {
@@ -37,7 +37,7 @@ export const Header = () => {
                                 <Link to="./#contact">CONTACT</Link>
                             </li>
                             <li className="header__nav-list-item">
-                                <Link to="">RESUME</Link>
+                                <Link to={resume} target="_blank">RESUME</Link>
                             </li>
                         </ul>
                     </span>
