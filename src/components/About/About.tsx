@@ -12,7 +12,7 @@ export const About = () => {
 
                 <div className="about__text-block">
                     <p className="about__text">
-                        I am a software-engineer passionate about problem-solving and leveraging technology to build innovative solutions.
+                        I am a software engineer passionate about problem-solving and leveraging technology to build innovative solutions.
                     </p>
                     <p className="about__text">
                         My expertise spans media art design and web development, with a strong foundation in biomedical engineering, machine learning, and natural language processing. My diverse skill set allows me to excel in team collaboration, where I contribute not only technical proficiency but also the ability to articulate complex concepts to non-technical stakeholders.
