@@ -32,6 +32,10 @@
 
 }
 
+@mixin logo {
+    width: 3.75rem;
+}
+
 @mixin button {
     color: $secondary-text;
     background: $primary;
@@ -46,4 +50,5 @@
 
 @mixin line {
     width: 0.125rem;
+    height: 7vh;
 }
