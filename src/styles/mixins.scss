@@ -54,6 +54,15 @@
     color: $secondary-text;
     background: $primary;
     padding: 1rem 2rem;
+    border: 0.0625rem solid $primary;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+        color: $primary;
+        background: $secondary-text;
+        border: 0.0625rem solid $primary;
+        transition: all 0.4s ease-in-out;
+    }
 }
 
 @mixin circle {
