@@ -10,7 +10,11 @@
         "deliverables": "Frontend and backend web development",
         "demographic": "Home cooks and food enthusiasts",
         "tech": "Vite, React.js, Sass, Express.js, Node.js, PostgreSQL",
-        "github": "https://github.com/ctam62/savoryscale"
+        "github": "https://github.com/ctam62/savoryscale",
+        "images": [
+            "savoryscale.jpg",
+            "savoryscale-responsive.jpg"
+        ]
     },
     {
         "title": "YouWatch",
@@ -23,7 +27,11 @@
         "deliverables": "Frontend and backend web development",
         "demographic": "Movie and TV show fans, digital entertainment enthusiasts, and streaming providers",
         "tech": "React.js, Sass, Express.js, Node.js, MySQL",
-        "github": "https://github.com/ctam62/industry-2b-server"
+        "github": "https://github.com/ctam62/industry-2b-server",
+        "images": [
+            "youwatch.jpg",
+            "youwatch-responsive.jpg"
+        ]
     },
     {
         "title": "iSpine",
@@ -36,7 +44,10 @@
         "deliverables": "Frontend web design and development",
         "demographic": "Radiologists, medical imaging scientists, and biomedical engineers",
         "tech": "HTML5, CSS3, Bootstrap, JavaScript, JQuery",
-        "github": ""
+        "github": "",
+        "images": [
+            "ispine.jpg"
+        ]
     },
     {
         "title": "GIF Reveal Rumble",
@@ -49,6 +60,9 @@
         "deliverables": "Frontend web design and development; third-party API integration",
         "demographic": "GIF enthusiasts",
         "tech": "HTML5, Sass, JavaScript",
-        "github": "https://github.com/ctam62/gif-reveal-rumble"
+        "github": "https://github.com/ctam62/gif-reveal-rumble",
+        "images": [
+            "gifrevealrumble.jpg"
+        ]
     }
 ]
