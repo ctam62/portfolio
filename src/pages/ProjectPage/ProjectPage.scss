@@ -4,27 +4,46 @@
 
 .project {
     width: 100%;
-    background: $secondary;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
     &__content {
-        width: 95%;
-        margin-bottom: 1.5rem;
-        padding: 2rem 1.25rem;
+        width: 100%;
         display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         justify-content: space-between;
         gap: 2rem;
+        background: $secondary;
+
+        &-col {
+            width: 100%;
+
+            @include desktop {
+                width: 47%;
+
+                &:nth-child(1) {
+                    order: 2;
+                }
+
+                &:nth-child(2) {
+                    order: 1;
+                }
+            }
+        }
     }
 
     &__description {
-        width: 100%;
+        width: 95%;
+        margin: 0 auto;
+        padding: 1.25rem;
         text-align: left;
 
-        @include tablet {
-            width: 45%;
+        @include desktop {
+            padding: 2.5rem;
         }
     }
 
@@ -41,10 +60,16 @@
 
     &__details {
         margin: 1.5rem 0;
+        line-height: 1.875rem;
     }
 
     &__subheading {
         font-weight: 700;
+    }
+
+    &__imgs {
+        width: 100%;
+        height: 544px;
     }
 
     &__nav {
