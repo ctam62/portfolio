@@ -17,7 +17,7 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
-        gap: 2rem;
+        gap: 1.5rem;
         background: $secondary;
 
         &-col {
@@ -29,8 +29,6 @@
             justify-content: center;
 
             @include desktop {
-                width: 47%;
-
                 &:nth-child(1) {
                     order: 2;
                 }
@@ -38,6 +36,19 @@
                 &:nth-child(2) {
                     order: 1;
                 }
+            }
+
+            &--first {
+                @include desktop {
+                    width: 55%;
+                }
+            }
+
+            &--second {
+                @include desktop {
+                    width: 43%;
+                }
+
             }
         }
     }
