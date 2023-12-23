@@ -9,13 +9,20 @@ import { Contact } from '../../components/Contact/Contact';
 import upArrow from '../../assets/icons/arrow-up-circle.svg';
 
 
+
+interface props {
+    open: boolean;
+    setOpen: Function;
+};
+
+
 interface vars {
     pathname: string;
     hash: string;
     key: string;
-}
+};
 
-export const HomePage = () => {
+export const HomePage = ({ open, setOpen }: props) => {
 
     const [visible, setVisible] = useState(false);
 
@@ -52,8 +59,14 @@ export const HomePage = () => {
         }
     }, [pathname, hash, key]);
 
+    const handleNavClose = () => {
+        if (open === true) {
+            setOpen(false);
+        }
+    };
+
     return (
-        <main className="home">
+        <main className="home" onClick={handleNavClose}>
             <Hero />
             <About />
             <Skills />
