@@ -11,7 +11,7 @@ interface props {
 
 export const GridItem = ({ title, img }: props) => {
 
-    const [visible, setVisible] = useState(true);
+    const [visible, setVisible] = useState(false);
     const navigate = useNavigate();
 
     return (
@@ -20,7 +20,7 @@ export const GridItem = ({ title, img }: props) => {
                 className={`grid-item__container`}
                 onMouseOver={() => setVisible(true)}
                 onMouseLeave={() => setVisible(false)}
-                onClick={() => navigate(`/${title.toLowerCase()}`)}
+                onClick={() => navigate(`/project/${title.toLowerCase()}`)}
             >
                 <div className="grid-item__overlay">
                     <img
