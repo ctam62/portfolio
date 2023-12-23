@@ -40,7 +40,7 @@ export const HomePage = () => {
     return (
         <main>
             <Hero />
-            <About />            
+            <About />
             <Skills />
             <Projects />
             <Contact />
