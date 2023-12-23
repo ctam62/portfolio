@@ -24,3 +24,11 @@ img {
 .hide {
     display: none;
 }
+
+.hidden {
+    visibility: hidden;
+}
+
+::-webkit-scrollbar {
+    transition: all 1s ease 0s;
+}
