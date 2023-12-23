@@ -12,6 +12,7 @@
 
     &__content {
         width: 95%;
+        margin-bottom: 1.5rem;
         padding: 2rem 1.25rem;
         display: flex;
         justify-content: space-between;
@@ -28,6 +29,7 @@
     }
 
     &__title {
+        margin-top: 3rem;
         margin-bottom: 2rem;
         @include section-header;
         font-weight: 700;

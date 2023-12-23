@@ -5,7 +5,7 @@ import data from '../../data/projects.json';
 
 export const ProjectPage = () => {
     const { title } = useParams();
-    const project = data.filter(item => item.title === title);
+    const project = data.filter(item => item.title.toLowerCase() === title)[0];
 
     return (
         <main className="project">
