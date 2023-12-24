@@ -22,7 +22,7 @@ export const Grid = () => {
 
     return (
         <div className="grid">
-            {projects.length && projects.map(project =>
+            {!!projects.length && projects.map(project =>
                 <GridItem
                     key={project.id}
                     title={project.title}

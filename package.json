@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://ctam62.github.io/portfolio",
   "scripts": {
-    "dev": "node -r dotenv/config ./node_modules/.bin/vite",
+    "dev": "vite",
     "build": "tsc && node -r dotenv/config ./node_modules/.bin/vite build",
     "preview": "node -r dotenv/config ./node_modules/.bin/vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
