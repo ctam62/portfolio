@@ -5,19 +5,88 @@
 .contact {
     width: 100%;
     background: $seasalt;
-    padding: 1rem;
+    padding: 0 1rem;
 
     @include tablet {
-        padding: 3rem;
+        padding: 0 3rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include tablet {
+            margin: 0 auto;
+            width: 70%;
+        }
+    }
+
+    &__circle--primary {
+        @include circle;
+        background: $primary;
+    }
+
+    &__line--primary {
+        @include line;
+        background: $primary;
     }
 
     &__heading {
         @include section-header;
-        margin: 1.5rem;
+        margin: 3rem 0 1.5rem 0;
+    }
+
+    &__message {
+        margin-bottom: 1.5rem;
+        width: 95%;
+    }
+
+    &__text {
+        @include body-text;
+        color: rgba(55, 55, 55, 0.6);
     }
 
     &__button {
         @include button;
-        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
     }
+
+    &__social {
+        margin: 3rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    &__icons {
+        width: 2rem;
+        filter: invert(85%) sepia(15%) saturate(201%) hue-rotate(128deg) brightness(87%) contrast(86%);
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+
+        &:hover {
+            filter: invert(72%) sepia(84%) saturate(1827%) hue-rotate(124deg) brightness(89%) contrast(87%);
+            transform: translateY(-0.3125rem);
+            transition: all 0.4s ease-in-out;
+        }
+
+        &-shadow {
+            margin: 0 auto;
+            height: 0;
+            width: 1.25rem;
+            border-radius: 6.25rem;
+            background: none;
+            opacity: 0;
+            box-shadow: 0 0.25rem 5px 1.5px rgba($jet, 0.4), inset 0 0 0 0 rgba($jet, 0);
+            transition: all 0.4s ease-in-out;
+        }
+    }
+}
+
+.contact__icons:hover+.contact__icons-shadow {
+    opacity: 0.4;
+    transition: all 0.4s ease-in-out;
 }

@@ -39,7 +39,9 @@
     }
 
     &__text {
+        @include body-text;
         padding: 1rem;
+        color: rgba(55, 55, 55, 0.6);
     }
 
     &__text-block {
