@@ -20,7 +20,7 @@ export const GridItem = ({ title, img }: props) => {
                 className={`grid-item__container`}
                 onMouseOver={() => setVisible(true)}
                 onMouseLeave={() => setVisible(false)}
-                onClick={() => navigate(`/project/${title.toLowerCase().replace(/\s/g, "-")}`)}
+                onClick={() => navigate(`/project/${title.replace(/\s/g, "-")}`)}
             >
                 <div className="grid-item__overlay">
                     <img

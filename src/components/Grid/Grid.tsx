@@ -1,30 +1,34 @@
 import './Grid.scss';
-import savoryscale from '../../assets/images/savoryscale.jpg';
-import youwatch from '../../assets/images/youwatch.jpg';
-import ispine from '../../assets/images/ispine.jpg';
-import gif from '../../assets/images/gifrevealrumble.jpg';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { GridItem } from '../GridItem/GridItem';
 
 
 export const Grid = () => {
+    const apiUrl = import.meta.env.VITE_APP_API_URL;
+    const [projects, setProjects] = useState([] as any[]);
+
+    useEffect(() => {
+        const getAllProjects = async () => {
+            try {
+                const { data } = await axios.get(`${apiUrl}/api/projects`);
+                setProjects(data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        getAllProjects();
+    }, []);
+
     return (
         <div className="grid">
-            <GridItem
-                title="SavoryScale"
-                img={savoryscale}
-            />
-            <GridItem
-                title="YouWatch"
-                img={youwatch}
-            />
-            <GridItem
-                title="iSpine"
-                img={ispine}
-            />
-            <GridItem
-                title="GIF Reveal Rumble"
-                img={gif}
-            />
+            {projects.length && projects.map(project =>
+                <GridItem
+                    key={project.id}
+                    title={project.title}
+                    img={`${apiUrl}/${project.images[0]}`}
+                />
+            )}
         </div>
     )
 };
