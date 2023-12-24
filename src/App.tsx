@@ -5,6 +5,7 @@ import { Header } from './components/Header/Header';
 import { HomePage } from './pages/HomePage/HomePage';
 import { ProjectPage } from './pages/ProjectPage/ProjectPage';
 import { Footer } from './components/Footer/Footer';
+import { ScrollToTop } from './components/ScrollToTop/ScrollToTop';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 
     return (
         <BrowserRouter>
+            <ScrollToTop />
             <Header open={open} setOpen={setOpen} />
             <Routes>
                 <Route path="/" element={<HomePage open={open} setOpen={setOpen} />} />

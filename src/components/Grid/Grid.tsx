@@ -26,7 +26,7 @@ export const Grid = () => {
                 <GridItem
                     key={project.id}
                     title={project.title}
-                    img={`${apiUrl}/${project.images[0]}`}
+                    img={`${apiUrl}/images/${project.images[0]}`}
                 />
             )}
         </div>

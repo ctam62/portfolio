@@ -55,11 +55,11 @@ export const ProjectPage = ({ open, setOpen }: props) => {
     let filename = "";
     if (project.images !== undefined) {
         responsiveImg = project.images?.includes(`${title?.toLowerCase()}-responsive.jpg`);
-        filename = `${apiUrl}/${project.images[0]}`;
+        filename = `${apiUrl}/images/${project.images[0]}`;
 
         if (responsiveImg) {
             const targetIndex = project.images.indexOf(`${title?.toLowerCase()}-responsive.jpg`);
-            filename = `${apiUrl}/${project.images[targetIndex]}`;
+            filename = `${apiUrl}/images/${project.images[targetIndex]}`;
         }
     }
 
@@ -144,7 +144,7 @@ export const ProjectPage = ({ open, setOpen }: props) => {
 
                                 <p className="project__text">
                                     <span className="project__subheading">Tech Stack: </span>
-                                    {project.tech}
+                                    {project.tech?.join(", ")}
                                 </p>
 
                                 <p className={`project__text ${project?.url === "" ? "hide" : ""}`}>
@@ -153,11 +153,12 @@ export const ProjectPage = ({ open, setOpen }: props) => {
                                         {project.url?.replace(/(https:\/\/)|(http:\/\/)/g, "")}
                                     </Link>
                                 </p>
-                                <p className={`project__text ${project.github === "" ? "hide" : ""}`}>
+                                <div className={`project__text ${project.github === "" ? "hide" : ""}`}>
                                     <Link to={project.github} target="_blank">
-                                        <img className="project__icon" src={github} alt="github" />
+                                        <img className="project__icons" src={github} alt="github" />
+                                        <div className="project__icons-shadow"></div>
                                     </Link>
-                                </p>
+                                </div>
                             </div>
                         </article>
                     </div>
