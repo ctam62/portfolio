@@ -36,7 +36,7 @@ export const ProjectPage = ({ open, setOpen }: props) => {
 
             try {
                 setIsLoading(true);
-                const { data } = await axios.put(`${apiUrl}/api/projects`, { title: parsedTitle });
+                const { data } = await axios.patch(`${apiUrl}/api/projects`, { title: parsedTitle });
                 setProject(data);
                 setIsLoading(false);
             } catch (error) {
