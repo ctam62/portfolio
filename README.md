@@ -2,7 +2,7 @@
   <img alt="Logo" src="https://github.com/ctam62/portfolio/blob/main/src/assets/logos/logo.svg" width="100" />
 </div>
 <h2 align="center">
-  [claratam.vercel.app](https://claratam.vercel.app)
+  <a href="https://claratam.vercel.app">claratam.vercel.app</a>
 </h2>
 
 ![Vercel](http://therealsujitk-vercel-badge.vercel.app/?app=therealsujitk-vercel-badge)
