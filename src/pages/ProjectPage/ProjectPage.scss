@@ -22,7 +22,6 @@
 
         &-col {
             width: 100%;
-            height: 46rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -39,13 +38,22 @@
             }
 
             &--first {
+                height: 18rem;
+
+                @include tablet {
+                    height: 30rem;
+                }
+
+
                 @include desktop {
+                    height: 46rem;
                     width: 53%;
                 }
             }
 
             &--second {
                 @include desktop {
+                    height: 46rem;
                     width: 45%;
                 }
 
@@ -102,11 +110,15 @@
         justify-content: center;
 
         &-list {
-            width: 95%;
+            width: 100%;
             padding: 2.5rem 1.25rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
+
+            @include tablet {
+                width: 95%;
+            }
 
             &-item {
                 font-weight: 700;
