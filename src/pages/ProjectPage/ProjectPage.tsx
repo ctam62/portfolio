@@ -153,7 +153,7 @@ export const ProjectPage = ({ open, setOpen }: props) => {
                                         {project.url?.replace(/(https:\/\/)|(http:\/\/)/g, "")}
                                     </Link>
                                 </p>
-                                <div className={`project__text ${project.github === "" ? "hide" : ""}`}>
+                                <div className={`project__text ${!project.github ? "hide" : ""}`}>
                                     <Link to={project.github} target="_blank">
                                         <img className="project__icons" src={github} alt="github" />
                                         <div className="project__icons-shadow"></div>
