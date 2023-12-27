@@ -22,37 +22,34 @@ export const ProjectPage = ({ open, setOpen }: props) => {
     const { title } = useParams();
     const parsedTitle = title?.replace(/[-]/g, " ");
 
-    const getAllProjects = async () => {
-        try {
-            const { data } = await axios.get(`${apiUrl}/api/projects`);
-            setProjects(data);
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
-    const getProject = async () => {
-        try {
-            setIsLoading(true);
-            const { data } = await axios.get(`${apiUrl}/api/projects/${parsedTitle}`);
-            setProject(data);
-            setIsLoading(false);
-        } catch (error) {
-            setIsLoading(false);
-            console.error(error);
-        }
-    };
-
     useEffect(() => {
+        const getAllProjects = async () => {
+            try {
+                const { data } = await axios.get(`${apiUrl}/api/projects`);
+                setProjects(data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        const getProject = async () => {
+
+            try {
+                setIsLoading(true);
+                const { data } = await axios.get(`${apiUrl}/api/projects/${parsedTitle}`);
+                setProject(data);
+                setIsLoading(false);
+            } catch (error) {
+                setIsLoading(false);
+                console.error(error);
+            }
+        }
+
         getAllProjects();
         if (title !== undefined) {
             getProject();
         }
     }, [title]);
-
-    useEffect(() => {
-        getProject();
-    }, []);
 
     let responsiveImg = "";
     let filename = "";
