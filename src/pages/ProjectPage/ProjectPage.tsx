@@ -117,7 +117,7 @@ export const ProjectPage = ({ open, setOpen }: props) => {
                             <p className="project__summary">{project.description}</p>
 
                             <div className="project__details">
-                                <p className={`project__text ${project.client === "" ? "hide" : ""}`}>
+                                <p className={`project__text ${!project.client ? "hide" : ""}`}>
                                     <span className="project__subheading">Client: </span>
                                     {project.client}
                                 </p>
@@ -125,19 +125,19 @@ export const ProjectPage = ({ open, setOpen }: props) => {
                                     <span className="project__subheading">Date: </span>
                                     {project.date}
                                 </p>
-                                <p className={`project__text ${project.brief === "" ? "hide" : ""}`}>
+                                <p className="project__text ">
                                     <span className="project__subheading">Brief: </span>
                                     {project.brief}
                                 </p>
-                                <p className={`project__text ${project.concept === "" ? "hide" : ""}`}>
+                                <p className="project__text">
                                     <span className="project__subheading">Concept: </span>
                                     {project.concept}
                                 </p>
-                                <p className={`project__text ${project.deliverables === "" ? "hide" : ""}`}>
+                                <p className="project__text">
                                     <span className="project__subheading">Deliverables: </span>
                                     {project.deliverables}
                                 </p>
-                                <p className={`project__text ${project.demographic === "" ? "hide" : ""}`}>
+                                <p className="project__text">
                                     <span className="project__subheading">Demographic: </span>
                                     {project.demographic}
                                 </p>
@@ -147,7 +147,7 @@ export const ProjectPage = ({ open, setOpen }: props) => {
                                     {project.tech?.join(", ")}
                                 </p>
 
-                                <p className={`project__text ${project?.url === "" ? "hide" : ""}`}>
+                                <p className={`project__text ${!project?.url ? "hide" : ""}`}>
                                     <span className="project__subheading">Website: </span>
                                     <Link to={project.url} target="_blank">
                                         {project.url?.replace(/(https:\/\/)|(http:\/\/)/g, "")}
