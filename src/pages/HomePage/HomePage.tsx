@@ -47,8 +47,7 @@ export const HomePage = ({ open, setOpen }: props) => {
                 left: 0,
                 behavior: "smooth"
             });
-        }
-        else {
+        } else {
             setTimeout(() => {
                 const id = hash.replace('#', '');
                 const element = document.getElementById(id);

@@ -22,11 +22,11 @@ export const Grid = () => {
 
     return (
         <div className="grid">
-            {projects.length && projects.map(project =>
+            {!!projects.length && projects.map(project =>
                 <GridItem
                     key={project.id}
                     title={project.title}
-                    img={`${apiUrl}/${project.images[0]}`}
+                    img={`${apiUrl}/images/${project.images[0]}`}
                 />
             )}
         </div>

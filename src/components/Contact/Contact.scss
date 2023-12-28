@@ -73,6 +73,11 @@
             transition: all 0.4s ease-in-out;
         }
 
+        &:hover+&-shadow {
+            opacity: 0.4;
+            transition: all 0.4s ease-in-out;
+        }
+
         &-shadow {
             margin: 0 auto;
             height: 0;
@@ -84,9 +89,4 @@
             transition: all 0.4s ease-in-out;
         }
     }
-}
-
-.contact__icons:hover+.contact__icons-shadow {
-    opacity: 0.4;
-    transition: all 0.4s ease-in-out;
 }

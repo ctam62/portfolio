@@ -55,11 +55,11 @@ export const ProjectPage = ({ open, setOpen }: props) => {
     let filename = "";
     if (project.images !== undefined) {
         responsiveImg = project.images?.includes(`${title?.toLowerCase()}-responsive.jpg`);
-        filename = `${apiUrl}/${project.images[0]}`;
+        filename = `${apiUrl}/images/${project.images[0]}`;
 
         if (responsiveImg) {
             const targetIndex = project.images.indexOf(`${title?.toLowerCase()}-responsive.jpg`);
-            filename = `${apiUrl}/${project.images[targetIndex]}`;
+            filename = `${apiUrl}/images/${project.images[targetIndex]}`;
         }
     }
 
@@ -117,7 +117,7 @@ export const ProjectPage = ({ open, setOpen }: props) => {
                             <p className="project__summary">{project.description}</p>
 
                             <div className="project__details">
-                                <p className={`project__text ${project.client === "" ? "hide" : ""}`}>
+                                <p className={`project__text ${!project.client ? "hide" : ""}`}>
                                     <span className="project__subheading">Client: </span>
                                     {project.client}
                                 </p>
@@ -125,39 +125,40 @@ export const ProjectPage = ({ open, setOpen }: props) => {
                                     <span className="project__subheading">Date: </span>
                                     {project.date}
                                 </p>
-                                <p className={`project__text ${project.brief === "" ? "hide" : ""}`}>
+                                <p className="project__text ">
                                     <span className="project__subheading">Brief: </span>
                                     {project.brief}
                                 </p>
-                                <p className={`project__text ${project.concept === "" ? "hide" : ""}`}>
+                                <p className="project__text">
                                     <span className="project__subheading">Concept: </span>
                                     {project.concept}
                                 </p>
-                                <p className={`project__text ${project.deliverables === "" ? "hide" : ""}`}>
+                                <p className="project__text">
                                     <span className="project__subheading">Deliverables: </span>
                                     {project.deliverables}
                                 </p>
-                                <p className={`project__text ${project.demographic === "" ? "hide" : ""}`}>
+                                <p className="project__text">
                                     <span className="project__subheading">Demographic: </span>
                                     {project.demographic}
                                 </p>
 
                                 <p className="project__text">
                                     <span className="project__subheading">Tech Stack: </span>
-                                    {project.tech}
+                                    {project.tech?.join(", ")}
                                 </p>
 
-                                <p className={`project__text ${project?.url === "" ? "hide" : ""}`}>
+                                <p className={`project__text ${!project?.url ? "hide" : ""}`}>
                                     <span className="project__subheading">Website: </span>
                                     <Link to={project.url} target="_blank">
                                         {project.url?.replace(/(https:\/\/)|(http:\/\/)/g, "")}
                                     </Link>
                                 </p>
-                                <p className={`project__text ${project.github === "" ? "hide" : ""}`}>
+                                <div className={`project__text ${!project.github ? "hide" : ""}`}>
                                     <Link to={project.github} target="_blank">
-                                        <img className="project__icon" src={github} alt="github" />
+                                        <img className="project__icons" src={github} alt="github" />
+                                        <div className="project__icons-shadow"></div>
                                     </Link>
-                                </p>
+                                </div>
                             </div>
                         </article>
                     </div>
