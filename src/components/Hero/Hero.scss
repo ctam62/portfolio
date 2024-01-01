@@ -44,8 +44,10 @@
                 margin-top: 1.5rem;
                 min-height: 23.75rem;
                 opacity: 0.5;
+                display: none;
 
                 @include tablet {
+                    display: flex;
                     margin-top: 0;
                 }
 
