@@ -68,7 +68,7 @@ export const HomePage = ({ open, setOpen }: props) => {
         <main className="home" onClick={handleNavClose}>
             <Hero />
             <About />
-            <Skills />
+            {/* <Skills /> */}
             <Projects />
             <Contact />
             <img

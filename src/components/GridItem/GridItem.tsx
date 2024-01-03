@@ -2,6 +2,7 @@ import './GridItem.scss';
 import view from '../../assets/icons/view.svg';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 
 interface props {
@@ -29,13 +30,14 @@ export const GridItem = ({ title, img }: props) => {
                         alt="view icon"
                     />
                 </div>
-                <article
-                    className="grid-item"
-                    style={{ background: `center/cover no-repeat url(${img})` }}
-                >
-                </article>
+                <LazyLoadComponent>
+                    <article
+                        className="grid-item"
+                        style={{ background: `center/cover no-repeat url(${img})` }}
+                    >
+                    </article>
+                </LazyLoadComponent>
             </div>
-
         </>
     )
 };
