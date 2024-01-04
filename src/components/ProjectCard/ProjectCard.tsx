@@ -1,9 +1,8 @@
-import './ProjectCard.scss';
-import view from '../../assets/icons/view.svg';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { LazyLoadComponent } from 'react-lazy-load-image-component';
-
+import "./ProjectCard.scss";
+import view from "../../assets/icons/view.svg";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 interface props {
     title: string;
@@ -11,7 +10,6 @@ interface props {
 }
 
 export const ProjectCard = ({ title, img }: props) => {
-
     const [visible, setVisible] = useState(false);
     const navigate = useNavigate();
 
@@ -33,10 +31,8 @@ export const ProjectCard = ({ title, img }: props) => {
                 <article
                     className="grid-item"
                     style={{ background: `center/cover no-repeat url(${img})` }}
-                >
-                </article>
+                ></article>
             </LazyLoadComponent>
         </div>
-    )
+    );
 };
-

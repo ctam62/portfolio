@@ -3,8 +3,6 @@ import axios from "axios";
 import { useParams } from "react-router";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
 import github from "../../assets/icons/github.svg";
 
