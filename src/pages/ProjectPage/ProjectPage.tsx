@@ -1,13 +1,12 @@
-import './ProjectPage.scss';
-import axios from 'axios';
-import { useParams } from 'react-router';
-import { Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-// import Skeleton from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
-import { LazyLoadComponent } from 'react-lazy-load-image-component';
-import github from '../../assets/icons/github.svg';
-
+import "./ProjectPage.scss";
+import axios from "axios";
+import { useParams } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
+import github from "../../assets/icons/github.svg";
 
 interface props {
     open: boolean;
@@ -34,14 +33,13 @@ export const ProjectPage = ({ open, setOpen }: props) => {
         };
 
         const getProject = async () => {
-
             try {
                 const { data } = await axios.get(`${apiUrl}/api/projects/${parsedTitle}`);
                 setProject(data);
             } catch (error) {
                 console.error(error);
             }
-        }
+        };
 
         getAllProjects();
         if (title !== undefined) {
@@ -49,16 +47,9 @@ export const ProjectPage = ({ open, setOpen }: props) => {
         }
     }, [title]);
 
-    let responsiveImg = "";
     let filename = "";
     if (project.images !== undefined) {
-        responsiveImg = project.images?.includes(`${title?.toLowerCase()}-responsive.jpg`);
-        filename = `${apiUrl}/images/${project.images[0]}`;
-
-        if (responsiveImg) {
-            const targetIndex = project.images.indexOf(`${title?.toLowerCase()}-responsive.jpg`);
-            filename = `${apiUrl}/images/${project.images[targetIndex]}`;
-        }
+        filename = `${apiUrl}/images/${project.images[1] || project.images[0]}`;
     }
 
     const [disablePrev, setDisablePrev] = useState(false);
@@ -68,7 +59,6 @@ export const ProjectPage = ({ open, setOpen }: props) => {
     const currentIndex = project.id;
     const prevIndex = currentIndex - 1;
     const nextIndex = currentIndex + 1;
-
 
     useEffect(() => {
         if (projects?.length < nextIndex) {
@@ -82,12 +72,12 @@ export const ProjectPage = ({ open, setOpen }: props) => {
     }, [prevIndex, nextIndex]);
 
     const handlePrevProject = () => {
-        const prevProjectTitle = projects.find(project => project.id === prevIndex).title;
+        const prevProjectTitle = projects.find((project) => project.id === prevIndex).title;
         navigate(`/project/${prevProjectTitle}`);
     };
 
     const handleNextProject = () => {
-        const nextProjectTitle = projects.find(project => project.id === nextIndex).title;
+        const nextProjectTitle = projects.find((project) => project.id === nextIndex).title;
         navigate(`/project/${nextProjectTitle}`);
     };
 
@@ -99,15 +89,13 @@ export const ProjectPage = ({ open, setOpen }: props) => {
 
     return (
         <main className="project" onClick={handleNavClose}>
-            
             <section className="project__content">
                 <div className="project__content-col project__content-col--first">
                     <LazyLoadComponent>
                         <div
                             className="project__imgs"
                             style={{ background: `center/cover no-repeat url(${filename})` }}
-                        >
-                        </div>
+                        ></div>
                     </LazyLoadComponent>
                 </div>
                 <div className="project__content-col project__content-col--second">
@@ -167,16 +155,18 @@ export const ProjectPage = ({ open, setOpen }: props) => {
                 <ul className="project__nav-list">
                     <li
                         className={`project__nav-list-item ${disablePrev ? "hidden" : ""}`}
-                        onClick={handlePrevProject}>
+                        onClick={handlePrevProject}
+                    >
                         PREVIOUS PROJECT
                     </li>
                     <li
                         className={`project__nav-list-item ${disableNext ? "hidden" : ""}`}
-                        onClick={handleNextProject}>
+                        onClick={handleNextProject}
+                    >
                         NEXT PROJECT
                     </li>
                 </ul>
             </nav>
         </main>
-    )
+    );
 };
