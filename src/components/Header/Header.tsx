@@ -1,8 +1,7 @@
-import './Header.scss';
-import logo from '../../assets/logos/logo.svg';
-import { Link } from 'react-router-dom';
-import resume from '/Clara_Tam_Resume_Software_Engineer.pdf';
-
+import "./Header.scss";
+import logo from "../../assets/logos/logo.svg";
+import { Link } from "react-router-dom";
+import resume from "/2025-08-21_ctam_resume.pdf";
 
 interface props {
     open: boolean;
@@ -10,7 +9,6 @@ interface props {
 }
 
 export const Header = ({ open, setOpen }: props) => {
-
     const toggleOpen = () => {
         setOpen(!open);
     };
@@ -19,7 +17,8 @@ export const Header = ({ open, setOpen }: props) => {
         <header className="header">
             <nav className="header__nav">
                 <Link to="/">
-                    <img className="header__logo"
+                    <img
+                        className="header__logo"
                         src={logo}
                         alt="clara tam's portfolio site logo"
                     />
@@ -41,7 +40,9 @@ export const Header = ({ open, setOpen }: props) => {
                                 <Link to="./#contact">CONTACT</Link>
                             </li>
                             <li className="header__nav-list-item">
-                                <Link to={resume} target="_blank">RESUME</Link>
+                                <Link to={resume} target="_blank">
+                                    RESUME
+                                </Link>
                             </li>
                         </ul>
                     </span>
@@ -49,5 +50,5 @@ export const Header = ({ open, setOpen }: props) => {
                 </nav>
             </nav>
         </header>
-    )
+    );
 };
