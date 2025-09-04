@@ -1,35 +1,20 @@
 import "./ProjectCardSkeleton.scss";
-import view from "../../assets/icons/view.svg";
-import { useState } from "react";
-import Skeleton from "react-loading-skeleton";
 
 interface props {
     cards: number;
 }
 
 export const ProjectCardSkeleton = ({ cards }: props) => {
-    const [visible, setVisible] = useState(false);
-
     return Array(cards)
         .fill(0)
         .map((_, i) => (
-            <div
-                key={i}
-                className="card-skeleton"
-                onMouseOver={() => setVisible(true)}
-                onMouseLeave={() => setVisible(false)}
-            >
-                <div className="grid-item__overlay">
-                    <img
-                        className={`grid-item__overlay-img ${visible ? "" : "hide"}`}
-                        src={view}
-                        alt="view icon"
-                    />
-                    <Skeleton height={10} />
+            <div key={i} className="skeleton-card" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div className="skeleton-card__overlay">
+                    <div className="skeleton-card__view-icon"></div>
                 </div>
-                <article className="grid-item">
-                    <Skeleton width="85%" circle={true} />
-                </article>
+                <div className="skeleton-card__image">
+                    <div className="skeleton-card__image-placeholder"></div>
+                </div>
             </div>
         ));
 };
