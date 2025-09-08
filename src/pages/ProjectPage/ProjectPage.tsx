@@ -150,19 +150,22 @@ export const ProjectPage = ({ open, setOpen }: props) => {
             </section>
 
             <section className={`project__img-list ${project.images?.length < 2 ? "hidden" : ""}`}>
-                {project.images
-                    ?.filter(
-                        (image: string) =>
-                            image !== project.images[1] && image !== project.images[0],
-                    )
-                    .map((image: string) => (
-                        <img
-                            key={image}
-                            className="project__img"
-                            src={`${apiUrl}/images/${image}`}
-                            alt={image}
-                        />
-                    ))}
+                <LazyLoadComponent>
+                    {project.images
+                        ?.filter(
+                            (image: string) =>
+                                image !== project.images[1] && image !== project.images[0],
+                        )
+                        .map((image: string) => (
+                            <div key={image} className="project__img-list-item">
+                                <img
+                                    className="project__img"
+                                    src={`${apiUrl}/images/${image}`}
+                                    alt={image}
+                                />
+                            </div>
+                        ))}
+                </LazyLoadComponent>
             </section>
 
             <nav className="project__nav">

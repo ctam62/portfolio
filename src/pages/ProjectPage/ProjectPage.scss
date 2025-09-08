@@ -100,11 +100,6 @@
         transition: transform 0.3s ease-in-out;
         display: block;
 
-        @include tablet {
-            width: 50%;
-            height: auto;
-        }
-
         &:hover {
             transform: scale(1.02);
         }
@@ -115,9 +110,14 @@
             justify-content: center;
             align-items: center;
 
-            @include tablet {
-                // width: 50%;
-                // grid-template-columns: repeat(2, 1fr);
+            &-item {
+                overflow: hidden;
+                width: 100%;
+
+                @include tablet {
+                    width: 50%;
+                    height: auto;
+                }
             }
         }
     }
