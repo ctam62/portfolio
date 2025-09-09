@@ -18,7 +18,7 @@ export const About = () => {
                         My expertise spans media art design and web development, with a strong foundation in biomedical engineering, machine learning, and natural language processing. My diverse skill set allows me to excel in team collaboration, where I contribute not only technical proficiency but also the ability to articulate complex concepts to non-technical stakeholders.
                     </p>
                     <p className="about__text">
-                        Currently, I've been working with technologies such as TypeSript, Vercel, Netlify, Django, and AWS.
+                        Currently, I've been working with technologies such as TypeScript, Vercel, Netlify, Django, and AWS.
                     </p>
                 </div>
 
